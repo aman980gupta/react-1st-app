@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 export default function Signup(){
+const [name,setName] = useState("");
 const [email,setEmail] = useState("");
 const [confirmEmail,setConfirmEmail] = useState("");
 const [password,setPassword] = useState("");
@@ -8,17 +9,24 @@ return(
     <div className= "container">
 
         <form action="">
+             <div className="mb-3">
+                <label htmlFor="exampleInputFullName" className="form-label">Full Name</label>
+                <input type="text" className="form-control" id="exampleInputFullName"  autoCOmplete="off"
+                value={name} onChange={event=>setName(event.target.value)}/>
+                
+            </div>
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autoCOmplete="off"
                 value={email} onChange={event=>setEmail(event.target.value)}/>
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                
             </div>
+            
             <div className="mb-3">
                 <label htmlFor="exampleInputConEmail1" className="form-label">Confirm Email address</label>
                 <input type="email" className="form-control" id="exampleInputConEmail1" aria-describedby="emailHelp" autoCOmplete="off"
                 value={confirmEmail} onChange={event=>setConfirmEmail(event.target.value)}/>
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                
             </div>
             <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
